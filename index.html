@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Quiz</title>
+<style>
+  /* Add your CSS styles here */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .options {
+    list-style-type: none;
+    padding: 0;
+  }
+  .options li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+    <fieldset style="background-color: #eee;">
+        <legend style="background-color: rosybrown;"><h1>HTML Quiz</h1></legend>
+
+
+<div class="question">
+  <p>1. What tag is used to define a table row?</p>
+  <ul class="options">
+    <li><input type="radio" name="q1" value="a"> &lt;tr&gt;</li>
+    <li><input type="radio" name="q1" value="b"> &lt;td&gt;</li>
+    <li><input type="radio" name="q1" value="c"> &lt;table&gt;</li>
+    <li><input type="radio" name="q1" value="d"> &lt;th&gt;</li>
+  </ul>
+</div>
+
+<div class="question">
+  <p>2. Which attribute is used to specify the URL of the image in the img tag?</p>
+  <ul class="options">
+    <li><input type="radio" name="q2" value="a"> src</li>
+    <li><input type="radio" name="q2" value="b"> href</li>
+    <li><input type="radio" name="q2" value="c"> alt</li>
+    <li><input type="radio" name="q2" value="d"> title</li>
+  </ul>
+</div>
+
+<div class="question">
+  <p>3. Which element is used to create a form in HTML?</p>
+  <ul class="options">
+    <li><input type="radio" name="q3" value="a"> &lt;input&gt;</li>
+    <li><input type="radio" name="q3" value="b"> &lt;form&gt;</li>
+    <li><input type="radio" name="q3" value="c"> &lt;button&gt;</li>
+    <li><input type="radio" name="q3" value="d"> &lt;label&gt;</li>
+  </ul>
+</div>
+
+
+<button onclick="checkAnswers()" style="background-color: rosybrown; padding: 10px;">Submit</button>
+</fieldset>
+
+<script>
+function checkAnswers() {
+  var score = 0;
+  var answers = {
+    q1: "a",
+    q2: "a",
+    q3: "b"
+  };
+
+  // Loop through each question
+  for (var i = 1; i <= 3; i++) {
+    var selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+    if (selectedOption) {
+      if (selectedOption.value === answers['q' + i]) {
+        score++;
+      }
+    }
+  }
+
+  alert("Your score is: " + score + " out of 3");
+}
+</script>
+
+</body>
+</html>
